@@ -1,0 +1,34 @@
+spring:
+  #  datasource:
+  #    url: url
+  #    username: root
+  #    password: admin
+  application:
+    name: My Web Application
+  main:
+    banner-mode: off
+#  profiles:
+#    active: prod
+server:
+  port: 8080
+logging:
+  level:
+    root: warn
+idev:
+  openapi:
+    dev-url: http://localhost:8080
+    prod-url: https://idev-api.com
+
+springdoc:
+  swagger-ui:
+    path: /idev-documentation
+    tryItOutEnabled: true
+    operationsSorter: method
+    tagsSorter: alpha
+    filter: true
+#    enabled: false
+  api-docs:
+    path: /idev-api-docs
+#    enabled: false
+  packages-to-scan: ru.geekbrains.mywebapplication
+
