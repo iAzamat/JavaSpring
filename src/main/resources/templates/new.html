@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add User</title>
+    <link th:href="@{/styles.css}" rel="stylesheet"/>
+</head>
+<body>
+<header>
+    <a href="/" class="button">Home</a>
+    <a href="/list" class="button">Users list</a>
+</header>
+<h3>New user creation form</h3>
+<form class="small_form">
+    <h1>Name</h1>
+    <h1>Age</h1>
+    <h1>Email</h1>
+</form>
+
+<form class="small_form" method="post">
+    <input type="text" name="name">
+    <input type="text" name="age">
+    <input type="text" name="email">
+    <div class="add_buttons">
+        <button name="add" type="submit" formaction="/add">add</button>
+    </div>
+</form>
+</body>
+</html>
