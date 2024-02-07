@@ -1,0 +1,38 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/users
+    username: dbuser
+    password: dbpassword
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+
+  application:
+    name: Data User Service
+  main:
+    banner-mode: off
+#  profiles:
+#    active: prod
+server:
+  port: 80
+logging:
+  level:
+    root: warn
+idev:
+  openapi:
+    dev-url: http://localhost
+    prod-url: https://idev-api.com
+
+springdoc:
+  swagger-ui:
+    path: /idev-documentation
+    tryItOutEnabled: true
+    operationsSorter: method
+    tagsSorter: alpha
+    filter: true
+  #    enabled: false
+  api-docs:
+    path: /idev-api-docs
+  #    enabled: false
+  packages-to-scan: com.example.api.demoapi
