@@ -1,0 +1,11 @@
+logging:
+  level:
+    root: debug
+    org:
+      springframework:
+        web: debug
+        context: debug
+      hibernate: error
+    net:
+      guides: debug
+
