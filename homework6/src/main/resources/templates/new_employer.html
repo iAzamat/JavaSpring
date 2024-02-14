@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Employer</title>
+    <link th:href="@{/styles.css}" rel="stylesheet"/>
+</head>
+<body>
+<header>
+    <a href="/" class="button">Home</a>
+    <a href="/employers" class="button">Employers list</a>
+</header>
+<h3>New employer creation form</h3>
+<form class="small_form">
+    <h1>Name</h1>
+    <h1>Commands</h1>
+</form>
+
+<form class="small_form" method="post">
+    <input type="text" name="name">
+    <div class="add_buttons">
+        <button name="add" type="submit" formaction="/employeradd">add</button>
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employers</title>
+    <link th:href="@{/styles.css}" rel="stylesheet"/>
+</head>
+<body>
+<header>
+    <a href="/" class="button">Home</a>
+    <a href="/new_employer" class="button">Add Employer</a>
+</header>
+
+<h3>Employers list:</h3>
+<form class="large_form2">
+    <h1>Id</h1>
+    <h1>Name</h1>
+    <h1>Commands</h1>
+</form>
+
+<form class="large_form2" th:each="employer: ${employers}" method="post" th:object="${employer}">
+    <p th:text="${employer.id}"></p>
+    <input type="text" th:value="${employer.name}" name="name">
+    <div class="control_buttons">
+        <input type="hidden" name="id" th:value="${employer.id}"/>
+        <button type="submit" formaction="/employeredit">save</button>
+        <button type="submit" formaction="/employerdelete">delete</button>
+    </div>
+</form>
+</body>
+</html>

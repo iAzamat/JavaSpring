@@ -18,6 +18,14 @@ a {
     width: 100%;
 }
 
+.large_form2 {
+    background: #4CAF50;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+}
+
 p{
     text-indent: 10px;
 }
