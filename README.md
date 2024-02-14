@@ -23,3 +23,47 @@
 
 **Дополнительное задание:**
 Реализовать автоматическое документирование API c помощью springdoc
+
+**Решение:**
+Взаимодействие построено через API и Swagger.
+Создаем задачу указав только наименование задачи
+
+*Employer API Controller:*
+
+`/api/employers/delete` - удалить исполнителя по id
+
+`/api/employers` - получить список исполнителей
+
+`/api/employers/{id}`- получить исполнителя по id
+
+`/api/employers/getAllTask` - получить (по id) все задачи исполнителя
+
+`/api/employers/create` - создать исполнителя
+
+`/api/employers/update` - обновить информацию об исполнителе
+
+`/api/employers/removeTask` - удалить задачу у исполнителя по id исполнителя и id задачи
+
+`/api/employers/assignTasks` - присвоить список или одну задачу исполнителю по id
+
+`/api/employers/addTask` - добавить одну задачу исполнителю по id исполнителя и id задачи
+
+*Task API Controller:*
+
+`/api/tasks/delete` - удалить задачу по id
+
+`/api/tasks` - получить список задач
+
+`/api/tasks/{id}`- получить задачу по id
+
+`/api/tasks/getTask` - получить задачу вместе с исполнителем
+
+`/api/tasks/filter` - фильтр задачи по статусу
+
+`/api/tasks/create` - создание задачи
+
+`/api/tasks/update/task` - обновить задачу
+
+`/api/tasks/update/status` - обновить статус задачи
+
+package ru.geekbrains.homework6;
