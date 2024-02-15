@@ -1,4 +1,4 @@
-package ru.geekbrains.homework6.Model;
+package ru.geekbrains.homework6.model;
 
 import java.io.Serializable;
 

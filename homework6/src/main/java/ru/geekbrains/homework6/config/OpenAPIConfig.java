@@ -1,4 +1,4 @@
-package ru.geekbrains.homework6.Swagger;
+package ru.geekbrains.homework6.config;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Contact;

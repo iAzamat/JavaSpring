@@ -1,14 +1,13 @@
-package ru.geekbrains.homework6.Controller;
+package ru.geekbrains.homework6.controller;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.geekbrains.homework6.Model.Employer;
-import ru.geekbrains.homework6.Model.Task;
-import ru.geekbrains.homework6.Service.TaskService;
-import ru.geekbrains.homework6.Model.TaskStatus;
+import ru.geekbrains.homework6.model.Task;
+import ru.geekbrains.homework6.service.TaskService;
+import ru.geekbrains.homework6.model.TaskStatus;
 
 import java.util.List;
 import java.util.Optional;

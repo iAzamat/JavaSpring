@@ -1,10 +1,10 @@
-package ru.geekbrains.homework6.Service;
+package ru.geekbrains.homework6.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.geekbrains.homework6.Model.Task;
-import ru.geekbrains.homework6.Model.TaskRepository;
-import ru.geekbrains.homework6.Model.TaskStatus;
+import ru.geekbrains.homework6.model.Task;
+import ru.geekbrains.homework6.model.TaskRepository;
+import ru.geekbrains.homework6.model.TaskStatus;
 
 import java.util.Date;
 import java.util.List;

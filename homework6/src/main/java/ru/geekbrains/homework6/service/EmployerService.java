@@ -1,15 +1,13 @@
-package ru.geekbrains.homework6.Service;
+package ru.geekbrains.homework6.service;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import ru.geekbrains.homework6.Model.Employer;
-import ru.geekbrains.homework6.Model.Task;
-import ru.geekbrains.homework6.Model.EmployerRepository;
-import ru.geekbrains.homework6.Model.TaskRepository;
+import ru.geekbrains.homework6.model.Employer;
+import ru.geekbrains.homework6.model.Task;
+import ru.geekbrains.homework6.model.EmployerRepository;
+import ru.geekbrains.homework6.model.TaskRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 

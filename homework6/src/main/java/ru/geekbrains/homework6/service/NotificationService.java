@@ -1,4 +1,4 @@
-package ru.geekbrains.homework6.Service;
+package ru.geekbrains.homework6.service;
 
 import org.springframework.stereotype.Service;
 

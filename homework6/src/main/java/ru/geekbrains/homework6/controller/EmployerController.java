@@ -1,20 +1,16 @@
-package ru.geekbrains.homework6.Controller;
+package ru.geekbrains.homework6.controller;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.geekbrains.homework6.Model.Employer;
-import ru.geekbrains.homework6.Model.Task;
-import ru.geekbrains.homework6.Model.TaskRepository;
-import ru.geekbrains.homework6.Service.EmployerService;
-import ru.geekbrains.homework6.Service.TaskService;
+import ru.geekbrains.homework6.model.Employer;
+import ru.geekbrains.homework6.model.Task;
+import ru.geekbrains.homework6.service.EmployerService;
+import ru.geekbrains.homework6.service.TaskService;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 @Tag(name = "Employer API Controller", description = "Employer API Controller")
 @RestController

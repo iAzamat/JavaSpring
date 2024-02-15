@@ -42,7 +42,7 @@
     <p th:text="${task.id}"></p>
     <input type="text" th:value="${task.description}" name="description">
     <select name="status">
-        <option th:each="status : ${T(ru.geekbrains.homework6.Model.TaskStatus).values()}"
+        <option th:each="status : ${T(ru.geekbrains.homework6.model.TaskStatus).values()}"
                 th:value="${status}"
                 th:text="${status}"
                 th:selected="${status == task.status}">

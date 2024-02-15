@@ -1,13 +1,13 @@
-package ru.geekbrains.homework6.Controller;
+package ru.geekbrains.homework6.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import ru.geekbrains.homework6.Model.TaskStatus;
-import ru.geekbrains.homework6.Service.EmployerService;
-import ru.geekbrains.homework6.Service.NotificationService;
-import ru.geekbrains.homework6.Service.TaskService;
+import ru.geekbrains.homework6.model.TaskStatus;
+import ru.geekbrains.homework6.service.EmployerService;
+import ru.geekbrains.homework6.service.NotificationService;
+import ru.geekbrains.homework6.service.TaskService;
 
 @Controller
 @RequestMapping("/")

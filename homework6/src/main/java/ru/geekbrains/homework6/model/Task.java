@@ -1,4 +1,4 @@
-package ru.geekbrains.homework6.Model;
+package ru.geekbrains.homework6.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
@@ -6,7 +6,7 @@ import lombok.Data;
 
 import java.util.Date;
 
-import static ru.geekbrains.homework6.Model.TaskStatus.TASK_NEW;
+import static ru.geekbrains.homework6.model.TaskStatus.TASK_NEW;
 
 @Entity
 @Data
