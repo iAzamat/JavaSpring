@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tasks</title>
+    <link th:href="@{/styles.css}" rel="stylesheet"/>
+</head>
+<body>
+<header>
+    <a href="/" class="button">Home</a>
+    <a href="/new" class="button">Add Task</a>
+</header>
+
+<form class="small_form">
+    <h1>Filter</h1>
+    <h1>Commands</h1>
+</form>
+<form class="small_form" method="post">
+    <select name="status">
+        <option value="no_filter" th:selected="${status == 'no_filter'}">No filter</option>
+        <option value="new" th:selected="${status == 'new'}">New</option>
+        <option value="proc" th:selected="${status == 'proc'}">In process</option>
+        <option value="comp" th:selected="${status == 'comp'}">Completed</option>
+    </select>
+    <div class="add_buttons">
+        <button name="filter" type="submit" formaction="/filter">save</button>
+    </div>
+</form>
+
+<p></p>
+<h3>Task list:</h3>
+<form class="large_form">
+    <h1>Id</h1>
+    <h1>Description</h1>
+    <h1>Status</h1>
+    <h1>Begin Date</h1>
+    <h1>End Date</h1>
+    <h1>Commands</h1>
+</form>
+
+<form class="large_form" th:each="task: ${tasks}" method="post" th:object="${task}">
+    <p th:text="${task.id}"></p>
+    <input type="text" th:value="${task.description}" name="description">
+    <select name="status">
+        <option th:each="status : ${T(ru.geekbrains.homework7.database.entity.TaskStatus).values()}"
+                th:value="${status}"
+                th:text="${status}"
+                th:selected="${status == task.status}">
+        </option>
+    </select>
+    <p th:text="${task.dateBegin}"></p>
+    <p th:text="${task.dateEnd}"></p>
+    <div class="control_buttons">
+        <input type="hidden" name="id" th:value="${task.id}"/>
+        <button type="submit" formaction="/edit">save</button>
+        <button type="submit" formaction="/delete">delete</button>
+    </div>
+</form>
+</body>
+</html>
