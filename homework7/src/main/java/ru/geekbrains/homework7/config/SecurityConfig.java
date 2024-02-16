@@ -35,9 +35,9 @@ public class SecurityConfig {
                         .requestMatchers("/registration/**", "/", "/css/**").permitAll()
                         .requestMatchers("/api/tasks/**","/api/employers/**", "swagger-ui/**")
                         .hasAnyRole("ADMIN")
-                        .requestMatchers("/employers").hasAnyRole("USER")
-                        .requestMatchers("/tasks").hasAnyRole("ADMIN")
-                        .requestMatchers("idev-api-docs").hasAnyRole("ADMIN", "USER")
+                        .requestMatchers("/employers").hasAnyRole("USER", "ADMIN")
+                        .requestMatchers("/tasks").hasAnyRole("USER", "ADMIN")
+                        .requestMatchers("idev-api-docs").hasAnyRole("USER", "ADMIN")
                         .anyRequest().authenticated())
                 .formLogin(AbstractAuthenticationFilterConfigurer::permitAll)
                 .build();

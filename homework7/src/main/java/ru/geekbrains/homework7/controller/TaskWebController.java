@@ -4,13 +4,18 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import ru.geekbrains.homework7.database.entity.Employer;
+import ru.geekbrains.homework7.database.entity.Task;
 import ru.geekbrains.homework7.database.entity.TaskStatus;
-import ru.geekbrains.homework7.database.entity.User;
-import ru.geekbrains.homework7.service.UserService;
 import ru.geekbrains.homework7.service.EmployerService;
 import ru.geekbrains.homework7.service.NotificationService;
 import ru.geekbrains.homework7.service.TaskService;
+
+import java.util.Comparator;
 
 @Controller
 @RequestMapping("/")
@@ -25,10 +30,11 @@ public class TaskWebController {
         return "index";
     }
 
-    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @GetMapping("/tasks")
+    @PreAuthorize("hasAuthority('ROLE_USER')")
     public String tasksPage(Model model) {
-        model.addAttribute("tasks", service.findAll());
+        model.addAttribute("tasks", service.findAll()
+                .stream().sorted(Comparator.comparing(Task::getId)));
         return "tasks";
     }
 
@@ -40,6 +46,7 @@ public class TaskWebController {
     }
 
     @PostMapping(value = "/delete")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public String deleteTask(@RequestParam("id") Long id, Model model) {
         notificationService.notify("Delete was active " + id);
         service.deleteById(id);
@@ -48,6 +55,7 @@ public class TaskWebController {
     }
 
     @PostMapping(value = "/edit")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public String updateTask(@RequestParam("id") Long id,
                              @RequestParam("name") String name,
                              @RequestParam("description") String description,
@@ -55,6 +63,7 @@ public class TaskWebController {
                              Model model) {
         notificationService.notify("Update Task{" +
                 "id=" + id +
+                ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", status=" + status +
                 '}');
@@ -65,6 +74,7 @@ public class TaskWebController {
     }
 
     @PostMapping(value = "/add")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public String createTask(@RequestParam("name") String name,
                              @RequestParam("description") String description,
                              Model model) {
@@ -74,13 +84,14 @@ public class TaskWebController {
     }
 
     @PostMapping(value = "/filter")
+    @PreAuthorize("hasAuthority('ROLE_USER')")
     public String filterTask(@RequestParam("status") String status, Model model) {
         switch (status) {
             case "no_filter" -> {
                 model.addAttribute("tasks", service.findAll());
                 model.addAttribute("status", status);
             }
-            case "new", "proc", "comp" -> {
+            case "new", "proc", "done" -> {
                 model.addAttribute("tasks", service.getByStatus(TaskStatus.convert(status)));
                 model.addAttribute("status", status);
             }
@@ -90,12 +101,15 @@ public class TaskWebController {
     }
 
     @GetMapping("/employers")
+    @PreAuthorize("hasAuthority('ROLE_USER')")
     public String employersPage(Model model) {
-        model.addAttribute("employers", employerService.findAll());
+        model.addAttribute("employers", employerService.findAll()
+                .stream().sorted(Comparator.comparing(Employer::getId)));
         return "employers";
     }
 
     @PostMapping(value = "/employerdelete")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public String deleteEmployer(@RequestParam("id") Long id, Model model) {
         notificationService.notify("Delete was active " + id);
         employerService.deleteById(id);
@@ -104,27 +118,30 @@ public class TaskWebController {
     }
 
     @PostMapping(value = "/employeredit")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public String updateEmployer(@RequestParam("id") Long id,
-                             @RequestParam("name") String name,
-                             Model model) {
+                                 @RequestParam("firstname") String firstname,
+                                 Model model) {
         notificationService.notify("Update Employer{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", firstname='" + firstname + '\'' +
                 '}');
-        employerService.updateById(name, id);
+        employerService.updateById(firstname, id);
         model.addAttribute("employers", employerService.findAll());
         return "redirect:/employers";
     }
 
     @PostMapping(value = "/employeradd")
-    public String createEmployer(@RequestParam("name") String name,
-                             Model model) {
-        notificationService.notify("Create Employer " + employerService.create(name));
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
+    public String createEmployer(@RequestParam("firstname") String firstname,
+                                 Model model) {
+        notificationService.notify("Create Employer " + employerService.create(firstname));
         model.addAttribute("employers", employerService.findAll());
         return "redirect:/employers";
     }
 
     @GetMapping(value = "/new_employer")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public String addEmployer(Model model) {
         model.addAttribute("employers", employerService.findAll());
         return "new_employer";
