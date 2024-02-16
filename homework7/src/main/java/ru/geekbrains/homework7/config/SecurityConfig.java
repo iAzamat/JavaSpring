@@ -10,12 +10,9 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractAuthenticationFilterConfigurer;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import ru.geekbrains.homework7.service.MyUserDetailsService;
 
@@ -35,7 +32,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(HttpMethod.DELETE).hasRole("ADMIN")
                         .requestMatchers(HttpMethod.PUT).hasRole("ADMIN")
-                        .requestMatchers("/registration", "/new-user", "/", "/css/**").permitAll()
+                        .requestMatchers("/registration/**", "/", "/css/**").permitAll()
                         .requestMatchers("/api/tasks/**", "swagger-ui/**").hasAnyRole("ADMIN")
                         .requestMatchers("/api/employers/**").hasAnyRole("USER", "ADMIN")
                         .anyRequest().authenticated())

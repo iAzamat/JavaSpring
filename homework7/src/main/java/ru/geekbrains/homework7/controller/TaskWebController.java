@@ -19,17 +19,6 @@ public class TaskWebController {
     private final TaskService service;
     private final NotificationService notificationService;
     private final EmployerService employerService;
-    private final UserService userService;
-    @PostMapping("/new-user")
-    public String addUser(@RequestBody User user) {
-        userService.addUser(user);
-        return "User is saved";
-    }
-
-    @GetMapping("/registration")
-    public String registerPage() {
-        return "registration";
-    }
 
     @GetMapping
     public String homePage() {

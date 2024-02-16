@@ -85,7 +85,7 @@ public class TaskService {
                     task.setStatus(status);
                     repository.save(task);
                 }
-                case TASK_COMPETED -> {
+                case TASK_DONE -> {
                     task.setStatus(status);
                     task.setDateEnd(LocalDate.now());
                     repository.save(task);

@@ -5,7 +5,6 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import ru.geekbrains.homework7.database.entity.User;
 
-
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.stream.Collectors;
@@ -13,13 +12,13 @@ import java.util.stream.Collectors;
 public class UserDetailsConfig implements UserDetails {
     private User user;
 
-    public UserDetailsConfig(User user){
+    public UserDetailsConfig(User user) {
         this.user = user;
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Arrays.stream(user.getRoles().split(", "))
+        return Arrays.stream(user.getRoles().split(","))
                 .map(SimpleGrantedAuthority::new)
                 .collect(Collectors.toList());
     }

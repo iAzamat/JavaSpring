@@ -7,7 +7,7 @@ import java.io.Serializable;
 public enum TaskStatus implements Serializable {
     TASK_NEW,
     TASK_IN_PROCESS,
-    TASK_COMPETED;
+    TASK_DONE;
 
     public static TaskStatus convert(String status) {
         if (status.toLowerCase().contains("new")) {
@@ -16,8 +16,8 @@ public enum TaskStatus implements Serializable {
         if (status.toLowerCase().contains("proc")) {
             return TASK_IN_PROCESS;
         }
-        if (status.toLowerCase().contains("comp")) {
-            return TASK_COMPETED;
+        if (status.toLowerCase().contains("done")) {
+            return TASK_DONE;
         }
         return null;
     }
