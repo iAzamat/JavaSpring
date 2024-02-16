@@ -49,4 +49,5 @@ public class RegisterController {
     public String registerPage() {
         return "registration";
     }
+
 }

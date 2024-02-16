@@ -20,7 +20,7 @@
 
 <form class="large_form2" th:each="employer: ${employers}" method="post" th:object="${employer}">
     <p th:text="${employer.id}"></p>
-    <input type="text" th:value="${employer.name}" name="name">
+    <input type="text" th:value="${employer.firstname}" name="name">
     <div class="control_buttons">
         <input type="hidden" name="id" th:value="${employer.id}"/>
         <button type="submit" formaction="/employeredit">save</button>

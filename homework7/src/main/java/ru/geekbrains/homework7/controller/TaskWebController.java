@@ -25,7 +25,7 @@ public class TaskWebController {
         return "index";
     }
 
-    @PreAuthorize("hasAuthority('ROLE_USER')")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @GetMapping("/tasks")
     public String tasksPage(Model model) {
         model.addAttribute("tasks", service.findAll());
