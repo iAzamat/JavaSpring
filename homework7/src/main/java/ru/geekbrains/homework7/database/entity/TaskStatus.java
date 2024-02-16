@@ -1,5 +1,7 @@
 package ru.geekbrains.homework7.database.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.io.Serializable;
 
 public enum TaskStatus implements Serializable {

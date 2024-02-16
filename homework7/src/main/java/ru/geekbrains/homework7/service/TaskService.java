@@ -6,7 +6,7 @@ import ru.geekbrains.homework7.database.entity.Task;
 import ru.geekbrains.homework7.database.repository.TaskRepository;
 import ru.geekbrains.homework7.database.entity.TaskStatus;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,9 +22,9 @@ public class TaskService {
         return taskList;
     }
 
-    public Task create(String description) {
-        if (description != null && description.length() > 1) {
-            Task task = new Task(description);
+    public Task create(String name, String description) {
+        if (name != null && name.length() > 1) {
+            Task task = new Task(name, description);
             repository.save(task);
             notificationService.notify("CreateTask: " + task);
             return task;
@@ -57,10 +57,11 @@ public class TaskService {
         return task;
     }
 
-    public Task updateById(String description, Long id) {
+    public Task updateById(String name, String description, Long id) {
         Task task = findById(id);
 
         if (task != null) {
+            task.setName(name);
             task.setDescription(description);
             repository.save(task);
             notificationService.notify("updateTaskById: " + task);
@@ -76,7 +77,7 @@ public class TaskService {
             switch (status) {
                 case TASK_NEW -> {
                     task.setStatus(status);
-                    task.setDateBegin(new Date());
+                    task.setDateBegin(LocalDate.now());
                     task.setDateEnd(null);
                     repository.save(task);
                 }
@@ -86,7 +87,7 @@ public class TaskService {
                 }
                 case TASK_COMPETED -> {
                     task.setStatus(status);
-                    task.setDateEnd(new Date());
+                    task.setDateEnd(LocalDate.now());
                     repository.save(task);
                 }
             }

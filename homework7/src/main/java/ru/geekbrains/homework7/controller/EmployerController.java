@@ -44,8 +44,8 @@ public class EmployerController {
     }
 
     @PostMapping(path = "/create")
-    public ResponseEntity<Employer> createEmployer(@RequestParam("name") String name) {
-        Employer employer = employerService.create(name);
+    public ResponseEntity<Employer> createEmployer(@RequestParam("firstname") String firstname) {
+        Employer employer = employerService.create(firstname);
 
         if (employer != null) {
             return new ResponseEntity<>(employer, HttpStatus.CREATED);
@@ -55,11 +55,11 @@ public class EmployerController {
     }
 
     @DeleteMapping(path = "/delete")
-    public ResponseEntity<Employer> deleteEmployerById(@RequestParam("id") Long id) {
-        Employer employer = employerService.deleteById(id);
+    public ResponseEntity<Long> deleteEmployerById(@RequestParam("id") Long id) {
+        Long employerId = employerService.deleteById(id);
 
-        if (employer != null) {
-            return new ResponseEntity<>(employer, HttpStatus.OK);
+        if (employerId != null) {
+            return new ResponseEntity<>(employerId, HttpStatus.OK);
         } else {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
@@ -100,6 +100,7 @@ public class EmployerController {
             Task task = taskService.findById(taskId);
             if (employer != null && task != null) {
                 Task temp = employerService.addToEmployUsingGetById(id, taskId);
+
                 return new ResponseEntity<>(temp, HttpStatus.OK);
             }
         }
@@ -119,9 +120,9 @@ public class EmployerController {
         return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
-    @GetMapping("/getAllTask")
-    public ResponseEntity<List<Task>> getAllTaskById(@RequestParam("employerId") Long id) {
-        List<Task> taskList = employerService.getAllTaskById(id);
+    @GetMapping("/{id}/tasks")
+    public ResponseEntity<List<Object>> getAllTaskById(@PathVariable("id") Long id) {
+        List<Object> taskList = employerService.getAllTaskById(id);
         if (taskList != null) {
             return new ResponseEntity<>(taskList, HttpStatus.OK);
         } else {

@@ -19,10 +19,10 @@ public class EmployerService {
     private final NotificationService notificationService;
 
 
-    public Employer create(String name) {
+    public Employer create(String firstname) {
         Employer employer = null;
-        if (name != null && name.length() > 1) {
-            employer = new Employer(name);
+        if (firstname != null && firstname.length() > 1) {
+            employer = new Employer(firstname);
             repository.save(employer);
             notificationService.notify("Create Employer: " + employer);
         } else {
@@ -51,15 +51,16 @@ public class EmployerService {
         return null;
     }
 
-    public Employer deleteById(Long id) {
+    public Long deleteById(Long id) {
         Employer employer = findById(id);
         if (employer != null) {
             repository.delete(employer);
             notificationService.notify("Delete Employer: " + employer);
+            return id;
         } else {
             notificationService.notify("Delete Employer: " + id + " not found in base");
         }
-        return employer;
+        return null;
     }
 
     public Employer updateById(String name, Long id) {
@@ -67,7 +68,7 @@ public class EmployerService {
             Employer employer = findById(id);
 
             if (employer != null) {
-                employer.setName(name);
+                employer.setFirstname(name);
                 repository.save(employer);
                 notificationService.notify("Update Employer data: " + employer);
             } else {
@@ -100,22 +101,24 @@ public class EmployerService {
 
     @Transactional
     public Task addToEmployUsingGetById(long id, long task_id) {
-        Employer employer = repository.getReferenceById(id);
+        Employer employer = repository.findById(id).orElse(null);
+        Task task = taskRepository.findById(task_id).orElse(null);
 
-        Task task = taskRepository.getReferenceById(task_id);
-        task.setEmployer(employer);
-        task = taskRepository.save(task);
+        if (employer != null && task != null) {
+            task.addEmployer(employer);
+        }
         return task;
     }
 
     @Transactional
     public Task deleteEmployUsingGetById(long id, long task_id) {
-        Employer employer = repository.getReferenceById(id);
-        Task task = taskRepository.getReferenceById(task_id);
+        Employer employer = repository.findById(id).orElse(null);
+        Task task = taskRepository.findById(task_id).orElse(null);
 
-        if (task.getEmployer().equals(employer)) {
-            task.setEmployer(null);
-            task = taskRepository.save(task);
+        if (employer != null &&
+                task != null &&
+                employer.getEmployerTasks().contains(task)) {
+            employer.removeTask(task);
             notificationService.notify("Remove Task");
         } else {
             notificationService.notify("Error! Remove Task");
@@ -124,9 +127,9 @@ public class EmployerService {
         return task;
     }
 
-    public List<Task> getAllTaskById(Long id) {
+    public List<Object> getAllTaskById(Long id) {
         if (id != null) {
-            return taskRepository.findTasksByEmployer_Id(id).orElse(null);
+            return taskRepository.findEmployerTasksByEmployerId(id).orElse(null);
         }
         return null;
     }

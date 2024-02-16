@@ -21,8 +21,9 @@ public class TaskController {
     private final TaskService service;
 
     @PostMapping(path = "/create")
-    public ResponseEntity<Task> createTask(@RequestParam("description") String description) {
-        Task task = service.create(description);
+    public ResponseEntity<Task> createTask(@RequestParam("name") String name,
+                                           @RequestParam("description") String description) {
+        Task task = service.create(name, description);
 
         if (task != null) {
             return new ResponseEntity<>(task, HttpStatus.CREATED);
@@ -54,8 +55,10 @@ public class TaskController {
     }
 
     @PutMapping(path = "/update/task")
-    public ResponseEntity<Task> updateTaskById(@RequestParam("id") Long id, @RequestParam("description") String description) {
-        Task task = service.updateById(description, id);
+    public ResponseEntity<Task> updateTaskById(@RequestParam("id") Long id,
+                                               @RequestParam("name") String name,
+                                               @RequestParam("description") String description) {
+        Task task = service.updateById(name, description, id);
 
         if (task != null) {
             return new ResponseEntity<>(task, HttpStatus.OK);

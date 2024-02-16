@@ -1,10 +1,13 @@
 package ru.geekbrains.homework7.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.geekbrains.homework7.database.entity.TaskStatus;
+import ru.geekbrains.homework7.database.entity.User;
+import ru.geekbrains.homework7.service.UserService;
 import ru.geekbrains.homework7.service.EmployerService;
 import ru.geekbrains.homework7.service.NotificationService;
 import ru.geekbrains.homework7.service.TaskService;
@@ -16,13 +19,24 @@ public class TaskWebController {
     private final TaskService service;
     private final NotificationService notificationService;
     private final EmployerService employerService;
+    private final UserService userService;
+    @PostMapping("/new-user")
+    public String addUser(@RequestBody User user) {
+        userService.addUser(user);
+        return "User is saved";
+    }
 
+    @GetMapping("/registration")
+    public String registerPage() {
+        return "registration";
+    }
 
     @GetMapping
     public String homePage() {
-        return "forward:index.html";
+        return "index";
     }
 
+    @PreAuthorize("hasAuthority('ROLE_USER')")
     @GetMapping("/tasks")
     public String tasksPage(Model model) {
         model.addAttribute("tasks", service.findAll());
@@ -30,6 +44,7 @@ public class TaskWebController {
     }
 
     @GetMapping(value = "/new")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public String addTask(Model model) {
         model.addAttribute("tasks", service.findAll());
         return "new";
@@ -45,6 +60,7 @@ public class TaskWebController {
 
     @PostMapping(value = "/edit")
     public String updateTask(@RequestParam("id") Long id,
+                             @RequestParam("name") String name,
                              @RequestParam("description") String description,
                              @RequestParam("status") TaskStatus status,
                              Model model) {
@@ -53,16 +69,17 @@ public class TaskWebController {
                 ", description='" + description + '\'' +
                 ", status=" + status +
                 '}');
-        service.updateById(description, id);
+        service.updateById(name, description, id);
         service.setStatus(status, id);
         model.addAttribute("tasks", service.findAll());
         return "redirect:/tasks";
     }
 
     @PostMapping(value = "/add")
-    public String createTask(@RequestParam("description") String description,
+    public String createTask(@RequestParam("name") String name,
+                             @RequestParam("description") String description,
                              Model model) {
-        notificationService.notify("Create Task " + service.create(description));
+        notificationService.notify("Create Task " + service.create(name, description));
         model.addAttribute("tasks", service.findAll());
         return "redirect:/tasks";
     }
