@@ -127,7 +127,7 @@ public class EmployerService {
         return task;
     }
 
-    public List<Object> getAllTaskById(Long id) {
+    public List<Task> getAllTaskById(Long id) {
         if (id != null) {
             return taskRepository.findEmployerTasksByEmployerId(id).orElse(null);
         }

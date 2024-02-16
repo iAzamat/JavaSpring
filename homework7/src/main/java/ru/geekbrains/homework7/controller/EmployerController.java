@@ -121,8 +121,8 @@ public class EmployerController {
     }
 
     @GetMapping("/{id}/tasks")
-    public ResponseEntity<List<Object>> getAllTaskById(@PathVariable("id") Long id) {
-        List<Object> taskList = employerService.getAllTaskById(id);
+    public ResponseEntity<List<Task>> getAllTaskById(@PathVariable("id") Long id) {
+        List<Task> taskList = employerService.getAllTaskById(id);
         if (taskList != null) {
             return new ResponseEntity<>(taskList, HttpStatus.OK);
         } else {

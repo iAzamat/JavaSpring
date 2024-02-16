@@ -56,8 +56,6 @@
 
 `/api/tasks/{id}`- получить задачу по id
 
-`/api/tasks/getTask` - получить задачу вместе с исполнителем
-
 `/api/tasks/filter` - фильтр задачи по статусу
 
 `/api/tasks/create` - создание задачи

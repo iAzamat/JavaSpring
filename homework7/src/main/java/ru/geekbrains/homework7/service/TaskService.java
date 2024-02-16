@@ -102,14 +102,4 @@ public class TaskService {
         temp.forEach(t -> notificationService.notify("getTasks : " + t.toString()));
         return temp;
     }
-
-    public Optional<Task> findWithJoinFetch(Long id) {
-        if (id != null) {
-            Optional<Task> task = repository.findWithJoinFetch(id);
-            notificationService.notify("select task findWithJoinFetch " + task);
-            return task;
-        } else {
-            return Optional.empty();
-        }
-    }
 }

@@ -99,12 +99,4 @@ public class TaskController {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
         }
     }
-
-    @GetMapping(path = "/getTask")
-    public ResponseEntity<Task> getTaskWithSQL(@RequestParam("tasksId") Long taskId) {
-        Optional<Task> task = service.findWithJoinFetch(taskId);
-        return task.map(
-                value -> new ResponseEntity<>(value, HttpStatus.OK)).orElseGet(
-                () -> new ResponseEntity<>(null, HttpStatus.NOT_FOUND));
-    }
 }

@@ -14,13 +14,11 @@ import java.util.Optional;
 public interface TaskRepository extends JpaRepository<Task, Long> {
     List<Task> findTasksByStatus(TaskStatus taskStatus);
 
-    @Query("select t from Task t join fetch t.name where t.id=:id")
-    Optional<Task> findWithJoinFetch(long id);
-
-    @Query(value = "SELECT * " +
+    @Query(value = "SELECT task.* " +
             "FROM employers_task " +
             "JOIN employer ON employers_task.employer_id = employer.id " +
             "JOIN task ON employers_task.task_id = task.id " +
             "WHERE employer.id = :employerId", nativeQuery = true)
-    Optional<List<Object>> findEmployerTasksByEmployerId(@Param("employerId") Long employerId);
+    Optional<List<Task>> findEmployerTasksByEmployerId(@Param("employerId") Long employerId);
+
 }
