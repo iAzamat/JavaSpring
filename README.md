@@ -29,40 +29,39 @@
 Создаем задачу указав только наименование задачи
 
 *Employer API Controller:*
+example id: 56
+example name: user
+example tasks id: 1, 2, 3
+example description: testDesc
+example status: new, proc, done
 
-`/api/employers/delete` - удалить исполнителя по id
+1. `GET /api/employers` - получить список исполнителей
 
-`/api/employers` - получить список исполнителей
+2. `GET /api/employers/56`- получить исполнителя по id
 
-`/api/employers/{id}`- получить исполнителя по id
+3. `POST /api/employers/?firstname=user` - создать исполнителя
 
-`/api/employers/getAllTask` - получить (по id) все задачи исполнителя
+4. `DELETE /api/employers/56` - удалить исполнителя по id
 
-`/api/employers/create` - создать исполнителя
+5. `PUT /api/employers/56/?name=user` - обновить информацию об исполнителе
 
-`/api/employers/update` - обновить информацию об исполнителе
+6. `PUT /api/employers/56/tasks/?taskId=1&taskId=2&taskId=3` - присвоить список или одну задачу исполнителю по id
 
-`/api/employers/removeTask` - удалить задачу у исполнителя по id исполнителя и id задачи
+7. `PUT /api/employers/56/tasks/1` - добавить одну задачу исполнителю по id исполнителя и id задачи
 
-`/api/employers/assignTasks` - присвоить список или одну задачу исполнителю по id
+8. `DELETE /api/employers/56/tasks/1` - удалить задачу у исполнителя по id 
 
-`/api/employers/addTask` - добавить одну задачу исполнителю по id исполнителя и id задачи
+9. `GET /api/employers/56/tasks`- получить список задач по id исполнителя
+исполнителя и id задачи
 
 *Task API Controller:*
-
-`/api/tasks/delete` - удалить задачу по id
-
-`/api/tasks` - получить список задач
-
-`/api/tasks/{id}`- получить задачу по id
-
-`/api/tasks/filter` - фильтр задачи по статусу
-
-`/api/tasks/create` - создание задачи
-
-`/api/tasks/update/task` - обновить задачу
-
-`/api/tasks/update/status` - обновить статус задачи
+ 1. `POST /api/tasks?name=user&description=testDesc` - создание задачи
+ 2. `GET /api/tasks` - получить список задач
+ 3. `GET /api/tasks/56`- получить задачу по id
+ 4. `PUT /api/tasks/56/?name=user&description=testDesc` - обновить задачу
+ 5. `PUT /api/tasks/56/status/?status=new` - обновить статус задачи
+ 6. `DELETE /api/tasks/56` - удалить задачу по id
+ 7. `GET /api/tasks/filter?status=new` - фильтр задачи по статусу
 
 package ru.geekbrains.homework7;
 
