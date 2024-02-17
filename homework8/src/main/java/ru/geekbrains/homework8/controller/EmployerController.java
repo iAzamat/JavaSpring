@@ -21,7 +21,7 @@ public class EmployerController {
     private final EmployerService employerService;
     private final TaskService taskService;
 
-    @GetMapping("")
+    @GetMapping()
     public ResponseEntity<List<Employer>> getEmployees() {
         List<Employer> employerList = employerService.findAll();
 
@@ -43,7 +43,7 @@ public class EmployerController {
         }
     }
 
-    @PostMapping(path = "/create")
+    @PostMapping("/")
     public ResponseEntity<Employer> createEmployer(@RequestParam("firstname") String firstname) {
         Employer employer = employerService.create(firstname);
 
@@ -54,8 +54,8 @@ public class EmployerController {
         }
     }
 
-    @DeleteMapping(path = "/delete")
-    public ResponseEntity<Long> deleteEmployerById(@RequestParam("id") Long id) {
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Long> deleteEmployerById(@PathVariable("id") Long id) {
         Long employerId = employerService.deleteById(id);
 
         if (employerId != null) {
@@ -65,8 +65,8 @@ public class EmployerController {
         }
     }
 
-    @PutMapping(path = "/update")
-    public ResponseEntity<Employer> updateEmployerById(@RequestParam("id") Long id, @RequestParam("name") String name) {
+    @PutMapping(path = "/{id}/")
+    public ResponseEntity<Employer> updateEmployerById(@PathVariable("id") Long id, @RequestParam("name") String name) {
         Employer employer = employerService.updateById(name, id);
 
         if (employer != null) {
@@ -76,8 +76,8 @@ public class EmployerController {
         }
     }
 
-    @PutMapping(path = "/assignTasks")
-    public ResponseEntity<Employer> updateEmployerTask(@RequestParam("employerId") Long id,
+    @PutMapping(path = "/{id}/tasks/")
+    public ResponseEntity<Employer> updateEmployerTask(@PathVariable("id") Long id,
                                                        @RequestParam("tasksId") List<Long> tasksId) {
         Employer employer = employerService.findById(id);
 
@@ -93,8 +93,8 @@ public class EmployerController {
     }
 
 
-    @PutMapping(path = "/addTask")
-    public ResponseEntity<Task> addEmployerTask(@RequestParam("employerId") Long id, @RequestParam("tasksId") Long taskId) {
+    @PutMapping(path = "/{employerId}/tasks/{taskId}")
+    public ResponseEntity<Task> addEmployerTask(@PathVariable("employerId") Long id, @PathVariable("taskId") Long taskId) {
         if (id != null && taskId != null) {
             Employer employer = employerService.findById(id);
             Task task = taskService.findById(taskId);
@@ -107,8 +107,8 @@ public class EmployerController {
         return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
-    @PutMapping(path = "/removeTask")
-    public ResponseEntity<Task> removeEmployerTask(@RequestParam("employerId") Long id, @RequestParam("tasksId") Long taskId) {
+    @DeleteMapping(path = "/{employerId}/tasks/{taskId}")
+    public ResponseEntity<Task> removeEmployerTask(@PathVariable("employerId") Long id, @PathVariable("taskId") Long taskId) {
         if (id != null && taskId != null) {
             Employer employer = employerService.findById(id);
             Task task = taskService.findById(taskId);

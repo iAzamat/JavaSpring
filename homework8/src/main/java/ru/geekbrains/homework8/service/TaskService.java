@@ -2,9 +2,12 @@ package ru.geekbrains.homework8.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import ru.geekbrains.homework8.database.entity.Employer;
 import ru.geekbrains.homework8.database.entity.Task;
-import ru.geekbrains.homework8.database.repository.TaskRepository;
 import ru.geekbrains.homework8.database.entity.TaskStatus;
+import ru.geekbrains.homework8.database.repository.EmployerRepository;
+import ru.geekbrains.homework8.database.repository.TaskRepository;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -15,6 +18,7 @@ import java.util.Optional;
 public class TaskService {
     private final TaskRepository repository;
     private final NotificationService notificationService;
+    private final EmployerRepository employerRepository;
 
     public List<Task> findAll() {
         List<Task> taskList = repository.findAll();
@@ -47,13 +51,23 @@ public class TaskService {
         }
     }
 
+    @Transactional
     public Task deleteById(Long id) {
         Task task = findById(id);
         if (task != null) {
-            repository.delete(task);
-            notificationService.notify("deleteTaskById: " + task);
+            boolean checkEmployersListIsEmpty = task.getEmployers().isEmpty();
+            if (checkEmployersListIsEmpty) {
+                repository.delete(task);
+                notificationService.notify("deleteTaskById: " + task);
+            } else {
+                for (Employer employer : task.getEmployers()) {
+                    employer.getEmployerTasks().remove(task);
+                }
+                task.getEmployers().clear();
+                repository.delete(task);
+                notificationService.notify("deleteTaskById: " + task);
+            }
         }
-
         return task;
     }
 
