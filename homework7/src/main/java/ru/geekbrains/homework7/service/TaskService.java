@@ -3,8 +3,8 @@ package ru.geekbrains.homework7.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.geekbrains.homework7.database.entity.Task;
-import ru.geekbrains.homework7.database.repository.TaskRepository;
 import ru.geekbrains.homework7.database.entity.TaskStatus;
+import ru.geekbrains.homework7.database.repository.TaskRepository;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -50,8 +50,15 @@ public class TaskService {
     public Task deleteById(Long id) {
         Task task = findById(id);
         if (task != null) {
-            repository.delete(task);
-            notificationService.notify("deleteTaskById: " + task);
+            boolean checkEmployersListIsEmpty = task.getEmployers().isEmpty();
+            if (checkEmployersListIsEmpty) {
+                repository.delete(task);
+                notificationService.notify("deleteTaskById: " + task);
+            } else{
+                // TODO Fix delete
+                repository.delete(task);
+                notificationService.notify("deleteTaskById: " + task);
+            }
         }
 
         return task;

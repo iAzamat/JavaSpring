@@ -20,7 +20,7 @@ public class TaskController {
 
     private final TaskService service;
 
-    @PostMapping(path = "/create")
+    @PostMapping()
     public ResponseEntity<Task> createTask(@RequestParam("name") String name,
                                            @RequestParam("description") String description) {
         Task task = service.create(name, description);
@@ -54,8 +54,8 @@ public class TaskController {
         }
     }
 
-    @PutMapping(path = "/update/task")
-    public ResponseEntity<Task> updateTaskById(@RequestParam("id") Long id,
+    @PutMapping(path = "/{id}/")
+    public ResponseEntity<Task> updateTaskById(@PathVariable("id") Long id,
                                                @RequestParam("name") String name,
                                                @RequestParam("description") String description) {
         Task task = service.updateById(name, description, id);
@@ -67,8 +67,8 @@ public class TaskController {
         }
     }
 
-    @PutMapping(path = "/update/status")
-    public ResponseEntity<Task> updateStatus(@RequestParam("id") Long id, @RequestParam("status") String status) {
+    @PutMapping(path = "/{id}/status/")
+    public ResponseEntity<Task> updateStatus(@PathVariable("id") Long id, @RequestParam("status") String status) {
         Task task = service.setStatus(TaskStatus.convert(status), id);
 
         if (task != null) {
@@ -78,8 +78,8 @@ public class TaskController {
         }
     }
 
-    @DeleteMapping(path = "/delete")
-    public ResponseEntity<Task> deleteTask(@RequestParam("id") Long id) {
+    @DeleteMapping(path = "/{id}")
+    public ResponseEntity<Task> deleteTask(@PathVariable("id") Long id) {
         Task task = service.deleteById(id);
 
         if (task != null) {
