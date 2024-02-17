@@ -1,0 +1,5 @@
+FROM mysql:latest
+ENV MYSQL_DATABASE=taskdb
+ENV MYSQL_USER=taskdb
+ENV MYSQL_PASSWORD=userpass
+ENV MYSQL_ROOT_PASSWORD=dbrootpass

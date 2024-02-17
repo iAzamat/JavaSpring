@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+<form id="myForm" class="small_form" action="/registration/new-user" method="post">
+    <label>
+        <input type="text" name="username" placeholder="username">
+    </label>
+    <label>
+        <input type="password" name="password" placeholder="password">
+    </label>
+    <label>
+        <input type="checkbox" name="roles" value="ROLE_USER" id="role_user" checked="checked">
+        <label for="role_user">User</label>
+        <input type="checkbox" name="roles" value="ROLE_ADMIN" id="role_admin">
+        <label for="role_admin">Admin</label>
+    </label>
+    <p th:text="${response}"></p>
+</form>
+
+<div class="add_buttons">
+    <button name="register" type="submit" form="myForm">Register</button>
+</div>
+</body>
+</html>
