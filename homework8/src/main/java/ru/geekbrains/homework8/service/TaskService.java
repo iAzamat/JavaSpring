@@ -3,10 +3,11 @@ package ru.geekbrains.homework8.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ru.gb.logging.annotations.MyLog;
+import ru.gb.performance.annotations.MyPerformance;
 import ru.geekbrains.homework8.database.entity.Employer;
 import ru.geekbrains.homework8.database.entity.Task;
 import ru.geekbrains.homework8.database.entity.TaskStatus;
-import ru.geekbrains.homework8.database.repository.EmployerRepository;
 import ru.geekbrains.homework8.database.repository.TaskRepository;
 
 import java.time.LocalDate;
@@ -18,39 +19,47 @@ import java.util.Optional;
 public class TaskService {
     private final TaskRepository repository;
     private final NotificationService notificationService;
-    private final EmployerRepository employerRepository;
 
+    @MyLog
+    @MyPerformance
     public List<Task> findAll() {
         List<Task> taskList = repository.findAll();
-        taskList.forEach(t -> notificationService.notify("getTasks : " + t));
+        taskList.forEach(t -> notificationService.notify("getTasks : " + t, 1));
         return taskList;
     }
 
+    @MyLog
+    @MyPerformance
+    @Transactional
     public Task create(String name, String description) {
         if (name != null && name.length() > 1) {
             Task task = new Task(name, description);
             repository.save(task);
-            notificationService.notify("CreateTask: " + task);
+            notificationService.notify("CreateTask: " + task, 1);
             return task;
         } else {
-            notificationService.notify("Fail createTask");
+            notificationService.notify("Fail createTask", 3);
             return null;
         }
     }
 
+    @MyLog
+    @MyPerformance
     public Task findById(Long id) {
         if (id != null) {
             Optional<Task> task = repository.findById(id);
             task.ifPresentOrElse(
-                    t -> notificationService.notify("getTaskById: " + t),
-                    () -> notificationService.notify("getTaskById: " + id + " not found"));
+                    t -> notificationService.notify("getTaskById: " + t, 1),
+                    () -> notificationService.notify("getTaskById: " + id + " not found", 2));
             return task.orElse(null);
         } else {
-            notificationService.notify("Incorrect Task id");
+            notificationService.notify("Incorrect Task id", 3);
             return null;
         }
     }
 
+    @MyLog
+    @MyPerformance
     @Transactional
     public Task deleteById(Long id) {
         Task task = findById(id);
@@ -58,19 +67,22 @@ public class TaskService {
             boolean checkEmployersListIsEmpty = task.getEmployers().isEmpty();
             if (checkEmployersListIsEmpty) {
                 repository.delete(task);
-                notificationService.notify("deleteTaskById: " + task);
+                notificationService.notify("deleteTaskById: " + task, 2);
             } else {
                 for (Employer employer : task.getEmployers()) {
                     employer.getEmployerTasks().remove(task);
                 }
                 task.getEmployers().clear();
                 repository.delete(task);
-                notificationService.notify("deleteTaskById: " + task);
+                notificationService.notify("deleteTaskById: " + task, 2);
             }
         }
         return task;
     }
 
+    @MyLog
+    @MyPerformance
+    @Transactional
     public Task updateById(String name, String description, Long id) {
         Task task = findById(id);
 
@@ -78,12 +90,15 @@ public class TaskService {
             task.setName(name);
             task.setDescription(description);
             repository.save(task);
-            notificationService.notify("updateTaskById: " + task);
+            notificationService.notify("updateTaskById: " + task, 2);
         }
 
         return task;
     }
 
+    @MyLog
+    @MyPerformance
+    @Transactional
     public Task setStatus(TaskStatus status, Long id) {
         Task task = findById(id);
 
@@ -105,15 +120,17 @@ public class TaskService {
                     repository.save(task);
                 }
             }
-            notificationService.notify("setTaskStatus: " + task);
+            notificationService.notify("setTaskStatus: " + task, 2);
         }
 
         return task;
     }
 
+    @MyLog
+    @MyPerformance
     public List<Task> getByStatus(TaskStatus taskStatus) {
         List<Task> temp = repository.findTasksByStatus(taskStatus);
-        temp.forEach(t -> notificationService.notify("getTasks : " + t.toString()));
+        temp.forEach(t -> notificationService.notify("getTasks : " + t.toString(), 1));
         return temp;
     }
 }

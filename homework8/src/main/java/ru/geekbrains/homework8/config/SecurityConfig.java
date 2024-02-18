@@ -33,7 +33,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.DELETE).hasRole("ADMIN")
                         .requestMatchers(HttpMethod.PUT).hasRole("ADMIN")
                         .requestMatchers("/registration/**", "/", "/css/**").permitAll()
-                        .requestMatchers("/api/tasks/**","/api/employers/**", "swagger-ui/**")
+                        .requestMatchers("/api/v1/tasks/**","/api/v1/employers/**", "swagger-ui/**")
                         .hasAnyRole("ADMIN")
                         .requestMatchers("/employers").hasAnyRole("USER", "ADMIN")
                         .requestMatchers("/tasks").hasAnyRole("USER", "ADMIN")

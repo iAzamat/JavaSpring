@@ -14,7 +14,7 @@ import java.util.Optional;
 
 @Tag(name = "Task API Controller", description = "Task API Controller")
 @RestController
-@RequestMapping("/api/tasks")
+@RequestMapping("/api/v1/tasks")
 @RequiredArgsConstructor
 public class TaskController {
 

@@ -3,6 +3,8 @@ package ru.geekbrains.homework8.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import ru.gb.logging.annotations.MyLog;
+import ru.gb.performance.annotations.MyPerformance;
 import ru.geekbrains.homework8.database.entity.Employer;
 import ru.geekbrains.homework8.database.entity.Task;
 import ru.geekbrains.homework8.database.repository.EmployerRepository;
@@ -18,51 +20,63 @@ public class EmployerService {
     private final TaskRepository taskRepository;
     private final NotificationService notificationService;
 
-
+    @MyLog
+    @MyPerformance
+    @Transactional
     public Employer create(String firstname) {
         Employer employer = null;
         if (firstname != null && firstname.length() > 1) {
             employer = new Employer(firstname);
             repository.save(employer);
-            notificationService.notify("Create Employer: " + employer);
+            notificationService.notify("Create Employer: " + employer, 1);
         } else {
-            notificationService.notify("Fail create Employer");
+            notificationService.notify("Fail create Employer", 3);
         }
         return employer;
     }
 
+    @MyLog
+    @MyPerformance
     public List<Employer> findAll() {
         List<Employer> employers = repository.findAll();
-        employers.forEach(t -> notificationService.notify("Find all Employers : " + t));
+        employers.forEach(t -> notificationService.notify("Find all Employers : " + t, 1));
         return employers;
     }
 
+    @MyLog
+    @MyPerformance
     public Employer findById(Long id) {
         if (id != null) {
             Optional<Employer> employer = repository.findById(id);
             if (employer.isPresent()) {
-                notificationService.notify("get Employer: " + employer);
+                notificationService.notify("get Employer: " + employer, 1);
             } else {
-                notificationService.notify("get Employer: " + id + " not found in base");
+                notificationService.notify("get Employer: " + id + " not found in base", 2);
             }
             return employer.orElse(null);
         }
-        notificationService.notify("Null Id");
+        notificationService.notify("Null Id", 3);
         return null;
     }
 
+    @MyLog
+    @MyPerformance
+    @Transactional
     public Long deleteById(Long id) {
         Employer employer = findById(id);
         if (employer != null) {
             repository.delete(employer);
-            notificationService.notify("Delete Employer: " + employer);
+            notificationService.notify("Delete Employer: " + employer, 2);
             return id;
         } else {
-            notificationService.notify("Delete Employer: " + id + " not found in base");
+            notificationService.notify("Delete Employer: " + id + " not found in base", 2);
         }
         return null;
     }
 
+    @MyLog
+    @MyPerformance
+    @Transactional
     public Employer updateById(String name, Long id) {
         if (name != null && name.length() > 1 && id != null) {
             Employer employer = findById(id);
@@ -70,9 +84,9 @@ public class EmployerService {
             if (employer != null) {
                 employer.setFirstname(name);
                 repository.save(employer);
-                notificationService.notify("Update Employer data: " + employer);
+                notificationService.notify("Update Employer data: " + employer, 2);
             } else {
-                notificationService.notify("Update Employer data: " + id + " not found in base");
+                notificationService.notify("Update Employer data: " + id + " not found in base", 2);
             }
             return employer;
         } else {
@@ -80,6 +94,8 @@ public class EmployerService {
         }
     }
 
+    @MyLog
+    @MyPerformance
     @Transactional
     public Employer updateById(List<Task> tasks, Long id) {
         if (id != null) {
@@ -89,9 +105,9 @@ public class EmployerService {
                 tasks.stream()
                         .map(Task::getId)
                         .forEach(taskId -> addToEmployUsingGetById(id, taskId));
-                notificationService.notify("Update Employer tasks: " + employer);
+                notificationService.notify("Update Employer tasks: " + employer, 2);
             } else {
-                notificationService.notify("Update Employer tasks: " + id + " not found in base");
+                notificationService.notify("Update Employer tasks: " + id + " not found in base", 2);
             }
             return employer;
         } else {
@@ -99,6 +115,8 @@ public class EmployerService {
         }
     }
 
+    @MyLog
+    @MyPerformance
     @Transactional
     public Task addToEmployUsingGetById(long id, long task_id) {
         Employer employer = repository.findById(id).orElse(null);
@@ -110,6 +128,8 @@ public class EmployerService {
         return task;
     }
 
+    @MyLog
+    @MyPerformance
     @Transactional
     public Task deleteEmployUsingGetById(long id, long task_id) {
         Employer employer = repository.findById(id).orElse(null);
@@ -119,14 +139,16 @@ public class EmployerService {
                 task != null &&
                 employer.getEmployerTasks().contains(task)) {
             employer.removeTask(task);
-            notificationService.notify("Remove Task");
+            notificationService.notify("Remove Task", 2);
         } else {
-            notificationService.notify("Error! Remove Task");
+            notificationService.notify("Error! Remove Task", 3);
         }
 
         return task;
     }
 
+    @MyLog
+    @MyPerformance
     public List<Task> getAllTaskById(Long id) {
         if (id != null) {
             return taskRepository.findEmployerTasksByEmployerId(id).orElse(null);

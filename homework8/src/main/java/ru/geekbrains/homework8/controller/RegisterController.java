@@ -29,16 +29,16 @@ public class RegisterController {
                 .roles(roles)
                 .build();
 
-        notificationService.notify("Register new User " + user.getUsername());
+        notificationService.notify("Register new User " + user.getUsername(), 1);
         boolean check = userService.addUser(user);
 
         if (check) {
-            notificationService.notify("Register Success " + user.getUsername());
+            notificationService.notify("Register Success " + user.getUsername(), 1);
             model.addAttribute("register", user);
             model.addAttribute("response", "Register Success");
             return "redirect:/";
         } else {
-            notificationService.notify("Bad Credentials " + user.getUsername());
+            notificationService.notify("Bad Credentials " + user.getUsername(), 2);
             model.addAttribute("register", user);
             model.addAttribute("response", "Bad Credentials");
             return "registration";

@@ -14,7 +14,7 @@ import java.util.List;
 
 @Tag(name = "Employer API Controller", description = "Employer API Controller")
 @RestController
-@RequestMapping("/api/employers")
+@RequestMapping("/api/v1/employers")
 @RequiredArgsConstructor
 public class EmployerController {
 

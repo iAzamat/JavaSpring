@@ -23,9 +23,14 @@ spring:
     active: dev
 server:
   port: 80
+
 logging:
   level:
-    root: warn
+    root: INFO
+  file:
+    name: mylog.log
+    path: /
+
 idev:
   openapi:
     dev-url: http://localhost
@@ -44,3 +49,11 @@ springdoc:
   #    enabled: false
   packages-to-scan: ru.geekbrains.homework8
 
+app:
+  common:
+    logging:
+      enabled: true
+      level: INFO
+    performance:
+      enabled: true
+      level: INFO

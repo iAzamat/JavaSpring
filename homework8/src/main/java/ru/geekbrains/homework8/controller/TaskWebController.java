@@ -48,7 +48,7 @@ public class TaskWebController {
     @PostMapping(value = "/delete")
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public String deleteTask(@RequestParam("id") Long id, Model model) {
-        notificationService.notify("Delete was active " + id);
+        notificationService.notify("Delete was active " + id, 2);
         service.deleteById(id);
         model.addAttribute("tasks", service.findAll());
         return "redirect:/tasks";
@@ -66,7 +66,7 @@ public class TaskWebController {
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", status=" + status +
-                '}');
+                '}', 2);
         service.updateById(name, description, id);
         service.setStatus(status, id);
         model.addAttribute("tasks", service.findAll());
@@ -78,7 +78,7 @@ public class TaskWebController {
     public String createTask(@RequestParam("name") String name,
                              @RequestParam("description") String description,
                              Model model) {
-        notificationService.notify("Create Task " + service.create(name, description));
+        notificationService.notify("Create Task " + service.create(name, description), 1);
         model.addAttribute("tasks", service.findAll());
         return "redirect:/tasks";
     }
@@ -96,7 +96,7 @@ public class TaskWebController {
                 model.addAttribute("status", status);
             }
         }
-        notificationService.notify("Filter: " + status);
+        notificationService.notify("Filter: " + status, 1);
         return "tasks";
     }
 
@@ -111,7 +111,7 @@ public class TaskWebController {
     @PostMapping(value = "/employerdelete")
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public String deleteEmployer(@RequestParam("id") Long id, Model model) {
-        notificationService.notify("Delete was active " + id);
+        notificationService.notify("Delete was active " + id, 2);
         employerService.deleteById(id);
         model.addAttribute("employers", employerService.findAll());
         return "redirect:/employers";
@@ -125,7 +125,7 @@ public class TaskWebController {
         notificationService.notify("Update Employer{" +
                 "id=" + id +
                 ", firstname='" + firstname + '\'' +
-                '}');
+                '}', 2);
         employerService.updateById(firstname, id);
         model.addAttribute("employers", employerService.findAll());
         return "redirect:/employers";
@@ -135,7 +135,7 @@ public class TaskWebController {
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public String createEmployer(@RequestParam("firstname") String firstname,
                                  Model model) {
-        notificationService.notify("Create Employer " + employerService.create(firstname));
+        notificationService.notify("Create Employer " + employerService.create(firstname), 1);
         model.addAttribute("employers", employerService.findAll());
         return "redirect:/employers";
     }
