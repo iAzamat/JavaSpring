@@ -1,0 +1,8 @@
+rootProject.name = 'homework9'
+
+includeBuild 'eureka-server'
+includeBuild 'cart-service'
+includeBuild 'product-service'
+includeBuild 'review-service'
+includeBuild 'api-gateway'
+
