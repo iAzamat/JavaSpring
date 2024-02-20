@@ -5,4 +5,4 @@ includeBuild 'cart-service'
 includeBuild 'product-service'
 includeBuild 'review-service'
 includeBuild 'api-gateway'
-
+includeBuild 'store-utils'
