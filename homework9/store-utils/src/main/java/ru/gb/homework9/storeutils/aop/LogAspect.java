@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 @Aspect
 @Slf4j
 public class LogAspect {
-    @Around("@annotation(ru.gb.*.annotations.MyLog)")
+    @Around("@annotation(ru.gb.homework9.storeutils.annotations.MyLog)")
     public Object logMethods(ProceedingJoinPoint joinPoint) throws Throwable {
         try {
             String timeStamp = new Date().toString();

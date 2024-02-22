@@ -1,5 +1,5 @@
 server:
-  port: 0
+  port: 9000
 eureka:
   #  instance:
   #    hostname: localhost
@@ -25,3 +25,44 @@ spring:
   jackson:
     serialization:
       FAIL_ON_EMPTY_BEANS: false
+
+  cloud:
+    openfeign:
+      client:
+        config:
+          product:
+            url: http://localhost:8765/product-service/api/v1/products
+
+app:
+  common:
+    logging:
+      enabled: true
+      level: INFO
+    performance:
+      enabled: true
+      level: INFO
+
+logging:
+  level:
+    root: INFO
+  file:
+    name: cart-service.log
+    path: /
+
+idev:
+  openapi:
+    dev-url: http://localhost:9000
+    prod-url: https://idev-api.com
+
+springdoc:
+  swagger-ui:
+    path: /cart-service/idev-documentation
+    tryItOutEnabled: true
+    operationsSorter: method
+    tagsSorter: alpha
+    filter: true
+  #    enabled: false
+  api-docs:
+    path: /cart-service/idev-api-docs
+  #    enabled: false
+  packages-to-scan: ru.gb.homework9.cartservice

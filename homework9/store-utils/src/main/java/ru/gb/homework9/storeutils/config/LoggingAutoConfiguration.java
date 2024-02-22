@@ -9,7 +9,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import ru.gb.homework9.storeutils.aop.LogAspect;
-import ru.gb.homework9.storeutils.aop.NotificationAspect;
+import ru.gb.homework9.storeutils.aop.PerformanceAspect;
 
 @Slf4j
 @Configuration
@@ -31,7 +31,7 @@ public class LoggingAutoConfiguration {
 
     @Bean
     @ConditionalOnMissingBean
-    public NotificationAspect notificationAspect(){
-        return new NotificationAspect();
+    public PerformanceAspect performanceAspect() {
+        return new PerformanceAspect();
     }
 }

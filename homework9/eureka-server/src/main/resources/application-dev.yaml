@@ -19,5 +19,10 @@ logging:
   level:
     com.netflix.eureka: OFF
     com.netflix.discovery: OFF
+    root: INFO
+  file:
+      name: eureka-server.log
+      path: /
   pattern:
 #    console: '%C{1.} [%-5level] %d{HH:mm:ss} - %msg%n'
+

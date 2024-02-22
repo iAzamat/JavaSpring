@@ -32,6 +32,11 @@
                   <project path="$PROJECT_DIR$/review-service" />
                 </projects>
               </build>
+              <build path="$PROJECT_DIR$/store-entity" name="store-entity">
+                <projects>
+                  <project path="$PROJECT_DIR$/store-entity" />
+                </projects>
+              </build>
               <build path="$PROJECT_DIR$/store-utils" name="store-utils">
                 <projects>
                   <project path="$PROJECT_DIR$/store-utils" />
@@ -50,6 +55,7 @@
             <option value="$PROJECT_DIR$/eureka-server" />
             <option value="$PROJECT_DIR$/product-service" />
             <option value="$PROJECT_DIR$/review-service" />
+            <option value="$PROJECT_DIR$/store-entity" />
             <option value="$PROJECT_DIR$/store-utils" />
           </set>
         </option>

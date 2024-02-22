@@ -48,6 +48,8 @@ services:
     networks:
       my-network:
         ipv4_address: 172.20.0.5
+    ports:
+      - "9000:9000"
 
   product-service:
     build:
@@ -56,6 +58,8 @@ services:
     networks:
       my-network:
         ipv4_address: 172.20.0.6
+    ports:
+      - "9001:9001"
 
   review-service:
     build:
@@ -64,3 +68,5 @@ services:
     networks:
       my-network:
         ipv4_address: 172.20.0.7
+    ports:
+      - "9002:9002"

@@ -1,3 +1,29 @@
 spring:
   profiles:
-    active: prod
+    active: dev
+  main:
+    banner-mode: off
+
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: cart
+          uri: lb://cart-service
+          predicates:
+            Path=/api/v1/carts/**
+
+        - id: product
+          uri: lb://product-service
+          predicates:
+            Path=/api/v1/products/**
+
+        - id: review
+          uri: lb://review-service
+          predicates:
+            Path=/api/v1/reviews/**

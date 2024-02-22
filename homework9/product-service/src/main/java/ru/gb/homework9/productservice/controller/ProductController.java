@@ -1,14 +1,44 @@
 package ru.gb.homework9.productservice.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
+import ru.gb.homework9.productservice.service.ProductService;
+import ru.gb.homework9.storeentity.entity.Product;
+import java.util.List;
 
+@Tag(name = "Product API Controller", description = "Product API Controller")
 @RestController
 @RequestMapping("/api/v1/products")
+@RequiredArgsConstructor
 public class ProductController {
-    @GetMapping("/test")
-    public String test(){
+    private final ProductService productService;
+
+    @GetMapping("/about")
+    public String about() {
         return "productservice";
+    }
+
+    @GetMapping
+    public List<Product> getAllProducts() {
+        return productService.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public Product getProductById(@PathVariable("id") Long id) {
+        return productService.findById(id);
+    }
+
+    @PostMapping
+    public Product addProduct(@RequestBody Product productTemp) {
+        return productService.create(
+                productTemp.getName(),
+                productTemp.getDescription(),
+                productTemp.getPrice());
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteProduct(@PathVariable Long id) {
+        productService.deleteById(id);
     }
 }

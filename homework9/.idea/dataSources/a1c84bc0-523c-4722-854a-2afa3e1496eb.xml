@@ -1115,89 +1115,147 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="302" parent="289" name="product">
+    <table id="302" parent="288" name="cart_item">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="303" parent="301" name="id">
+    <table id="303" parent="289" name="product">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="304" parent="290" name="review">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="305" parent="301" name="id">
       <AutoIncrement>1</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
-    </column>
-    <column id="304" parent="301" name="created_at">
-      <DasType>date|0s</DasType>
-      <Position>2</Position>
-    </column>
-    <column id="305" parent="301" name="customer_id">
-      <DasType>bigint|0s</DasType>
-      <NotNull>1</NotNull>
-      <Position>3</Position>
     </column>
     <column id="306" parent="301" name="total_price">
       <DasType>double|0s</DasType>
       <NotNull>1</NotNull>
-      <Position>4</Position>
+      <Position>2</Position>
     </column>
-    <column id="307" parent="301" name="updated_at">
-      <DasType>date|0s</DasType>
-      <Position>5</Position>
-    </column>
-    <index id="308" parent="301" name="PRIMARY">
+    <index id="307" parent="301" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="309" parent="301" name="UK_867x3yysb1f3jk41cv3vsoejj">
-      <ColNames>customer_id</ColNames>
-      <Type>btree</Type>
-      <Unique>1</Unique>
-    </index>
-    <key id="310" parent="301" name="PRIMARY">
+    <key id="308" parent="301" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="311" parent="301" name="UK_867x3yysb1f3jk41cv3vsoejj">
-      <UnderlyingIndexName>UK_867x3yysb1f3jk41cv3vsoejj</UnderlyingIndexName>
-    </key>
-    <column id="312" parent="302" name="id">
+    <column id="309" parent="302" name="id">
       <AutoIncrement>1</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="313" parent="302" name="description">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="310" parent="302" name="product_id">
+      <DasType>bigint|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="314" parent="302" name="name">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="311" parent="302" name="quantity">
+      <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="315" parent="302" name="price">
-      <DasType>double|0s</DasType>
-      <NotNull>1</NotNull>
+    <column id="312" parent="302" name="cart_id">
+      <DasType>bigint|0s</DasType>
       <Position>4</Position>
     </column>
-    <index id="316" parent="302" name="PRIMARY">
+    <foreign-key id="313" parent="302" name="FK1uobyhgl1wvgt1jpccia8xxs3">
+      <ColNames>cart_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>cart</RefTableName>
+    </foreign-key>
+    <index id="314" parent="302" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="317" parent="302" name="UK_jmivyxk9rmgysrmsqw15lqr5b">
-      <ColNames>name</ColNames>
+    <index id="315" parent="302" name="FK1uobyhgl1wvgt1jpccia8xxs3">
+      <ColNames>cart_id</ColNames>
       <Type>btree</Type>
-      <Unique>1</Unique>
     </index>
-    <key id="318" parent="302" name="PRIMARY">
+    <key id="316" parent="302" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <key id="319" parent="302" name="UK_jmivyxk9rmgysrmsqw15lqr5b">
+    <column id="317" parent="303" name="id">
+      <AutoIncrement>2</AutoIncrement>
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="318" parent="303" name="description">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="319" parent="303" name="name">
+      <DasType>varchar(255)|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <column id="320" parent="303" name="price">
+      <DasType>double|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>4</Position>
+    </column>
+    <index id="321" parent="303" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="322" parent="303" name="UK_jmivyxk9rmgysrmsqw15lqr5b">
+      <ColNames>name</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="323" parent="303" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <key id="324" parent="303" name="UK_jmivyxk9rmgysrmsqw15lqr5b">
       <UnderlyingIndexName>UK_jmivyxk9rmgysrmsqw15lqr5b</UnderlyingIndexName>
+    </key>
+    <column id="325" parent="304" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="326" parent="304" name="author">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="327" parent="304" name="content">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="328" parent="304" name="product_id">
+      <DasType>bigint|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="329" parent="304" name="rating">
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>5</Position>
+    </column>
+    <index id="330" parent="304" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="331" parent="304" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
   </database-model>
 </dataSource>

@@ -1,4 +1,4 @@
-package ru.gb.homework9.productservice.database.entity;
+package ru.gb.homework9.storeentity.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
+@Table(name = "product", schema = "dbproduct", catalog = "dbproduct")
 @NoArgsConstructor
 @AllArgsConstructor
 public class Product {
@@ -21,4 +22,9 @@ public class Product {
 
     private double price;
 
+    public Product(String name, String description, double price) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
+    }
 }

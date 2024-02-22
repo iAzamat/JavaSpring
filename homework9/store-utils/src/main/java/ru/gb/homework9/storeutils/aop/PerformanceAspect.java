@@ -12,7 +12,7 @@ import java.util.Date;
 @Aspect
 @Slf4j
 public class PerformanceAspect {
-    @Around("@annotation(ru.gb.*.annotations.MyPerformance)")
+    @Around("@annotation(ru.gb.homework9.storeutils.annotations.MyPerformance)")
     public Object logMethods(ProceedingJoinPoint joinPoint) throws Throwable {
         String timeStamp = new Date().toString();
         long start = System.currentTimeMillis();

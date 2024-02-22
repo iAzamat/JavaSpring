@@ -1,5 +1,5 @@
 server:
-  port: 0
+  port: 9001
 eureka:
   #  instance:
   #    hostname: localhost
@@ -25,3 +25,37 @@ spring:
   jackson:
     serialization:
       FAIL_ON_EMPTY_BEANS: false
+
+app:
+  common:
+    logging:
+      enabled: true
+      level: INFO
+    performance:
+      enabled: true
+      level: INFO
+
+logging:
+  level:
+    root: INFO
+  file:
+    name: product-service.log
+    path: /
+
+idev:
+  openapi:
+    dev-url: http://localhost:9001
+    prod-url: https://idev-api.com
+
+springdoc:
+  swagger-ui:
+    path: /product-service/idev-documentation
+    tryItOutEnabled: true
+    operationsSorter: method
+    tagsSorter: alpha
+    filter: true
+  #    enabled: false
+  api-docs:
+    path: /product-service/idev-api-docs
+  #    enabled: false
+  packages-to-scan: ru.gb.homework9.productservice
