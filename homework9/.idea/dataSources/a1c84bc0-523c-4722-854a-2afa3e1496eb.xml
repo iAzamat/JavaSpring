@@ -1225,7 +1225,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <UnderlyingIndexName>UK_jmivyxk9rmgysrmsqw15lqr5b</UnderlyingIndexName>
     </key>
     <column id="325" parent="304" name="id">
-      <AutoIncrement>1</AutoIncrement>
+      <AutoIncrement>2</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>

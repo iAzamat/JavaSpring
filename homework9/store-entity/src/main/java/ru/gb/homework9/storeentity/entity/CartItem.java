@@ -1,5 +1,6 @@
 package ru.gb.homework9.storeentity.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -21,7 +22,6 @@ public class CartItem {
     @JoinColumn(name = "cart_id")
     private Cart cart;
 
-    @Column(name = "product_id")
     private Long productId;
 
     private int quantity;

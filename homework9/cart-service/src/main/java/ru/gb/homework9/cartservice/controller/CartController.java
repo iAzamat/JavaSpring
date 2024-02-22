@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 import ru.gb.homework9.cartservice.client.ExternalProductApi;
 import ru.gb.homework9.cartservice.service.CartService;
 import ru.gb.homework9.storeentity.entity.Cart;
-import ru.gb.homework9.storeentity.entity.CartItem;
 import ru.gb.homework9.storeentity.entity.Product;
 
 
@@ -15,9 +14,6 @@ import ru.gb.homework9.storeentity.entity.Product;
 @RequestMapping("/api/v1/carts")
 @RequiredArgsConstructor
 public class CartController {
-
-    // Добавление товаров в корзину, удаление товаров из корзины и оформление заказа.
-
     private final ExternalProductApi productApi;
     private final CartService cartService;
 
@@ -26,21 +22,29 @@ public class CartController {
         return "cartservice";
     }
 
-    @GetMapping("/add")
-    public Product addToCart() {
-        Product product = productApi.findProductById(1L);
-        return product;
+    @PostMapping("/")
+    public Cart addToCart(@RequestParam("cart_id") Long cart_id,
+                          @RequestParam("product_id") Long product_id,
+                          @RequestParam("quantity") int quantity) {
+        Product product = productApi.findProductById(product_id);
+        if (product != null && quantity > 0 && cart_id != null) {
+            return cartService.addToCart(cart_id, product, quantity);
+        }
+
+        return null;
     }
 
-    @DeleteMapping("/remove/{productId}")
-    public void removeFromCart(@PathVariable Long productId) {
-        // Add logic to remove item from cart
-
-
+    @DeleteMapping("/{id}")
+    public void removeFromCart(@PathVariable("id") Long cartId,
+                               @RequestParam("product_id") Long product_id) {
+        Product product = productApi.findProductById(product_id);
+        if (product != null && cartId != null) {
+            cartService.removeFromCart(cartId, product);
+        }
     }
 
-    @PostMapping("/checkout")
-    public void checkout(@RequestBody Cart cart) {
-        // Add logic to process checkout
+    @PostMapping("/order/{id}")
+    public String makeOrder(@PathVariable("id") Long cartId) {
+        return cartService.placeOrder(cartId);
     }
 }

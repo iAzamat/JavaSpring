@@ -6,46 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="298b4843-0bb5-44ad-b656-38aa584034d6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/a1c84bc0-523c-4722-854a-2afa3e1496eb.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a1c84bc0-523c-4722-854a-2afa3e1496eb.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docker/microservice/Docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/Docker/microservice/Docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application-dev.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application-dev.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application-prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application-prod.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/ru/gb/homework9/cartservice/CartServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/ru/gb/homework9/cartservice/CartServiceApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/ru/gb/homework9/cartservice/controller/CartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/ru/gb/homework9/cartservice/controller/CartController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/ru/gb/homework9/cartservice/database/entity/Cart.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/ru/gb/homework9/cartservice/database/repository/CartRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/ru/gb/homework9/cartservice/database/repository/CartRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart-service/src/main/resources/application-dev.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/resources/application-dev.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart-service/src/main/resources/application-prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/resources/application-prod.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cart-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/resources/application-dev.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/application-dev.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/eureka-server/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/ru/gb/homework9/productservice/ProductServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/ru/gb/homework9/productservice/ProductServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/ru/gb/homework9/productservice/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/ru/gb/homework9/productservice/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/ru/gb/homework9/productservice/database/entity/Product.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/java/ru/gb/homework9/productservice/database/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/java/ru/gb/homework9/productservice/database/repository/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/resources/application-dev.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/resources/application-dev.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/resources/application-prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/resources/application-prod.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/product-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/product-service/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/review-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/review-service/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/review-service/src/main/java/ru/gb/homework9/reviewservice/ReviewServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/review-service/src/main/java/ru/gb/homework9/reviewservice/ReviewServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/review-service/src/main/java/ru/gb/homework9/reviewservice/controller/ReviewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/review-service/src/main/java/ru/gb/homework9/reviewservice/controller/ReviewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/review-service/src/main/java/ru/gb/homework9/reviewservice/database/entity/Review.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/review-service/src/main/java/ru/gb/homework9/reviewservice/database/repository/ReviewRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/review-service/src/main/java/ru/gb/homework9/reviewservice/database/repository/ReviewRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/review-service/src/main/resources/application-dev.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/review-service/src/main/resources/application-dev.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/review-service/src/main/resources/application-prod.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/review-service/src/main/resources/application-prod.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/review-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/review-service/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-utils/src/main/java/ru/gb/homework9/storeutils/aop/LogAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-utils/src/main/java/ru/gb/homework9/storeutils/aop/LogAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-utils/src/main/java/ru/gb/homework9/storeutils/aop/NotificationAspect.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-utils/src/main/java/ru/gb/homework9/storeutils/aop/PerformanceAspect.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-utils/src/main/java/ru/gb/homework9/storeutils/aop/PerformanceAspect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-utils/src/main/java/ru/gb/homework9/storeutils/config/LoggingAutoConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-utils/src/main/java/ru/gb/homework9/storeutils/config/LoggingAutoConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-utils/src/main/java/ru/gb/homework9/storeutils/config/PerformanceAutoConfiguration.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-utils/src/main/java/ru/gb/homework9/storeutils/config/PerformanceProperties.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/store-utils/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/store-utils/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/ru/gb/homework9/cartservice/database/repository/CartItemRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/ru/gb/homework9/cartservice/database/repository/CartItemRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cart-service/src/main/java/ru/gb/homework9/cartservice/service/CartService.java" beforeDir="false" afterPath="$PROJECT_DIR$/cart-service/src/main/java/ru/gb/homework9/cartservice/service/CartService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-entity/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/store-entity/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-entity/src/main/java/ru/gb/homework9/storeentity/entity/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-entity/src/main/java/ru/gb/homework9/storeentity/entity/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-entity/src/main/java/ru/gb/homework9/storeentity/entity/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-entity/src/main/java/ru/gb/homework9/storeentity/entity/CartItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store-entity/src/main/java/ru/gb/homework9/storeentity/entity/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/store-entity/src/main/java/ru/gb/homework9/storeentity/entity/Product.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,12 +39,7 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="homework9" type="f1a62948:ProjectNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </tree_state>
         </projects_view>
@@ -102,36 +65,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "Homework9",
-    "jdk.selected.JAVA_MODULE": "openjdk-21",
-    "last_opened_file_path": "D:/2. Area/Education/project/JavaSpring/homework9/store-entity/src/main/java/ru/gb/homework9/storeentity/entity",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "database.query.execution",
-    "spring.configuration.checksum": "69b92f5abc3c37e0b26b79d26341b89f",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Homework9&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-21&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/2. Area/Education/project/JavaSpring/homework9&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;database.query.execution&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;fa6d2d5340d94b01011daabeab071d80&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\2. Area\Education\project\JavaSpring\homework9\store-entity\src\main\java\ru\gb\homework9\storeentity\entity" />
@@ -160,8 +123,8 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.homework9 [:cart-service:clean]">
-    <configuration name="homework9 [:cart-service:clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.homework9 [:store-utils:clean]">
+    <configuration name="homework9 [:eureka-server:clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -172,7 +135,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value=":cart-service:clean" />
+            <option value=":eureka-server:clean" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -183,7 +146,7 @@
       <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="homework9 [:store-utils:classes]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="homework9 [:product-service:clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -194,7 +157,51 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value=":store-utils:classes" />
+            <option value=":product-service:clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="homework9 [:review-service:clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":review-service:clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="homework9 [:store-entity:clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":store-entity:clean" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -282,39 +289,13 @@
       </deployment>
       <method v="2" />
     </configuration>
-    <configuration name="microservice/Docker-compose.yml.review-service: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="review-service" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="Docker/microservice/Docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
-    <configuration name="microservice/Docker-compose.yml.storedb-container: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="services">
-            <list>
-              <option value="storedb-container" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="Docker/microservice/Docker-compose.yml" />
-        </settings>
-      </deployment>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.homework9 [:cart-service:clean]" />
-        <item itemvalue="Docker.microservice/Docker-compose.yml.storedb-container: Compose Deployment" />
-        <item itemvalue="Gradle.homework9 [:store-utils:classes]" />
         <item itemvalue="Gradle.homework9 [:store-utils:clean]" />
-        <item itemvalue="Docker.microservice/Docker-compose.yml.review-service: Compose Deployment" />
+        <item itemvalue="Gradle.homework9 [:store-entity:clean]" />
+        <item itemvalue="Gradle.homework9 [:review-service:clean]" />
+        <item itemvalue="Gradle.homework9 [:product-service:clean]" />
+        <item itemvalue="Gradle.homework9 [:eureka-server:clean]" />
       </list>
     </recent_temporary>
   </component>
@@ -344,6 +325,8 @@
       <workItem from="1708507960824" duration="1163000" />
       <workItem from="1708509152490" duration="13483000" />
       <workItem from="1708534618418" duration="27137000" />
+      <workItem from="1708591715354" duration="13550000" />
+      <workItem from="1708617225497" duration="19172000" />
     </task>
     <servers />
   </component>
