@@ -1,0 +1,5 @@
+FROM mysql:latest
+ENV MYSQL_DATABASE=springtestdb
+ENV MYSQL_USER=user
+ENV MYSQL_PASSWORD=userpass
+ENV MYSQL_ROOT_PASSWORD=root
