@@ -30,4 +30,4 @@
 
 #### Покрытие:
 
-![Тест](/img/image.png)
+![Тест](https://github.com/iAzamat/JavaSpring/blob/Homework10/homework10/img/Image.png)

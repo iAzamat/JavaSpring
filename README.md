@@ -27,3 +27,7 @@
 
 > [!NOTE]
 > *Желательно* использовать spring security в работе
+
+#### Покрытие:
+
+![Тест](https://github.com/iAzamat/JavaSpring/blob/Homework10/homework10/img/Image.png)
