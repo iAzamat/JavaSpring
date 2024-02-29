@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="298b4843-0bb5-44ad-b656-38aa584034d6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/store-entity">
+      <ProjectState />
+    </projectState>
+    <projectState path="$PROJECT_DIR$/store-utils">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$/store-utils">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="store-utils" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="store-utils" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="store-utils" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2cazxZEFNbrKbnRqOZXHMaRqA9l" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Homework11",
+    "jdk.selected.JAVA_MODULE": "openjdk-21",
+    "last_opened_file_path": "D:/2. Area/Education/project/JavaSpring/homework9/Docker/microservice",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "database.query.execution",
+    "spring.configuration.checksum": "fa6d2d5340d94b01011daabeab071d80",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\2. Area\Education\project\JavaSpring\homework9\Docker\microservice" />
+      <recent name="D:\2. Area\Education\project\JavaSpring\homework9\Docker" />
+      <recent name="D:\2. Area\Education\project\JavaSpring\homework9\Docker\microservice\prometheus" />
+      <recent name="D:\2. Area\Education\project\JavaSpring\homework9\store-entity\src\main\java\ru\gb\homework9\storeentity\entity" />
+      <recent name="D:\2. Area\Education\project\JavaSpring\homework9\review-service\src\main\java\ru\gb\homework9\reviewservice" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\2. Area\Education\project\JavaSpring\homework9\Docker\microservice" />
+      <recent name="D:\2. Area\Education\project\JavaSpring\homework9\cart-service\src\main\java\ru\gb\homework9\cartservice\database\entity" />
+      <recent name="D:\2. Area\Education\project\JavaSpring\homework9\Docker" />
+      <recent name="D:\2. Area\Education\project\JavaSpring\homework9\Docker\database" />
+      <recent name="D:\2. Area\Education\project\JavaSpring\homework9" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ru.gb.homework9.cartservice.client" />
+      <recent name="ru.gb.homework9.storeentity.entity" />
+      <recent name="ru.gb.homework9.cartservice" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Docker.microservice/Docker-compose.yml.grafana: Compose Deployment">
+    <configuration name="homework9 [:store-utils:clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":store-utils:clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="store-utils [classes]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/store-utils" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="classes" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="api-gateway.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.gb.homework9.apigateway.ApiGatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CartServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="cart-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.gb.homework9.cartservice.CartServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="eureka-server.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.gb.homework9.eurekaserver.EurekaServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="product-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.gb.homework9.productservice.ProductServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReviewServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="review-service.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.gb.homework9.reviewservice.ReviewServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StoreEntityApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="store-entity.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.gb.homework9.storeentity.StoreEntityApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StoreUtilsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="store-utils.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="ru.gb.homework9.storeutils.StoreUtilsApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="microservice/Docker-compose.yml.grafana: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="grafana" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="Docker/microservice/Docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="microservice/Docker-compose.yml.prometheus: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="prometheus" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="Docker/microservice/Docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="microservice/Docker-compose.yml.storedb-container: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="storedb-container" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="Docker/microservice/Docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Docker.microservice/Docker-compose.yml.grafana: Compose Deployment" />
+      <item itemvalue="Docker.microservice/Docker-compose.yml.prometheus: Compose Deployment" />
+      <item itemvalue="Docker.microservice/Docker-compose.yml.storedb-container: Compose Deployment" />
+      <item itemvalue="Gradle.homework9 [:store-utils:clean]" />
+      <item itemvalue="Gradle.store-utils [classes]" />
+      <item itemvalue="Spring Boot.EurekaServerApplication" />
+      <item itemvalue="Spring Boot.ProductServiceApplication" />
+      <item itemvalue="Spring Boot.ApiGatewayApplication" />
+      <item itemvalue="Spring Boot.CartServiceApplication" />
+      <item itemvalue="Spring Boot.ReviewServiceApplication" />
+      <item itemvalue="Spring Boot.StoreEntityApplication" />
+      <item itemvalue="Spring Boot.StoreUtilsApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Docker.microservice/Docker-compose.yml.grafana: Compose Deployment" />
+        <item itemvalue="Docker.microservice/Docker-compose.yml.prometheus: Compose Deployment" />
+        <item itemvalue="Docker.microservice/Docker-compose.yml.storedb-container: Compose Deployment" />
+        <item itemvalue="Gradle.store-utils [classes]" />
+        <item itemvalue="Gradle.homework9 [:store-utils:clean]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="298b4843-0bb5-44ad-b656-38aa584034d6" name="Changes" comment="" />
+      <created>1708364726387</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1708364726387</updated>
+      <workItem from="1708364727885" duration="30000" />
+      <workItem from="1708364927464" duration="159000" />
+      <workItem from="1708365260430" duration="396000" />
+      <workItem from="1708365793277" duration="4676000" />
+      <workItem from="1708371121090" duration="16000" />
+      <workItem from="1708374296688" duration="11016000" />
+      <workItem from="1708387301927" duration="1307000" />
+      <workItem from="1708420956070" duration="11033000" />
+      <workItem from="1708433918996" duration="356000" />
+      <workItem from="1708434661572" duration="9397000" />
+      <workItem from="1708444291796" duration="53000" />
+      <workItem from="1708444558583" duration="86000" />
+      <workItem from="1708464557036" duration="13207000" />
+      <workItem from="1708477799608" duration="8519000" />
+      <workItem from="1708486613807" duration="1990000" />
+      <workItem from="1708507960824" duration="1163000" />
+      <workItem from="1708509152490" duration="13483000" />
+      <workItem from="1708534618418" duration="27137000" />
+      <workItem from="1708591715354" duration="13550000" />
+      <workItem from="1708617225497" duration="19172000" />
+      <workItem from="1708636600779" duration="927000" />
+      <workItem from="1708637559347" duration="57000" />
+      <workItem from="1709151784606" duration="4825000" />
+      <workItem from="1709159777610" duration="328000" />
+      <workItem from="1709200423465" duration="10894000" />
+      <workItem from="1709222951373" duration="1812000" />
+      <workItem from="1709224840296" duration="33000" />
+      <workItem from="1709224964842" duration="11169000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalStateException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

@@ -1,0 +1,3 @@
+CREATE DATABASE dbcart;
+CREATE DATABASE dbproduct;
+CREATE DATABASE dbreview;

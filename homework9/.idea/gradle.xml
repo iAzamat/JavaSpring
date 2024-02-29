@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <compositeConfiguration>
+          <compositeBuild compositeDefinitionSource="SCRIPT">
+            <builds>
+              <build path="$PROJECT_DIR$/api-gateway" name="api-gateway">
+                <projects>
+                  <project path="$PROJECT_DIR$/api-gateway" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/cart-service" name="cart-service">
+                <projects>
+                  <project path="$PROJECT_DIR$/cart-service" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/eureka-server" name="eureka-server">
+                <projects>
+                  <project path="$PROJECT_DIR$/eureka-server" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/product-service" name="product-service">
+                <projects>
+                  <project path="$PROJECT_DIR$/product-service" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/review-service" name="review-service">
+                <projects>
+                  <project path="$PROJECT_DIR$/review-service" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/store-entity" name="store-entity">
+                <projects>
+                  <project path="$PROJECT_DIR$/store-entity" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/store-utils" name="store-utils">
+                <projects>
+                  <project path="$PROJECT_DIR$/store-utils" />
+                </projects>
+              </build>
+            </builds>
+          </compositeBuild>
+        </compositeConfiguration>
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="A:/Dev/gradle" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/api-gateway" />
+            <option value="$PROJECT_DIR$/cart-service" />
+            <option value="$PROJECT_DIR$/eureka-server" />
+            <option value="$PROJECT_DIR$/product-service" />
+            <option value="$PROJECT_DIR$/review-service" />
+            <option value="$PROJECT_DIR$/store-entity" />
+            <option value="$PROJECT_DIR$/store-utils" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/store-entity" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/store-entity" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$/store-utils" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/store-utils" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

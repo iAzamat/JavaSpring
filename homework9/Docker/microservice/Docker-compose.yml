@@ -1,0 +1,101 @@
+version: "3.9"
+
+volumes:
+  prometheus_data: { }
+  grafana-storage: { }
+
+networks:
+  my-network:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/16
+
+services:
+  storedb-container:
+    image: mysql:latest
+    networks:
+      my-network:
+        ipv4_address: 172.20.0.2
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: dbrootpass
+      MYSQL_USER: dbstore
+      MYSQL_PASSWORD: userpass
+    volumes:
+      - "./scripts/schema.sql:/docker-entrypoint-initdb.d/schema.sql"
+  #      - "./scripts/data.sql:/docker-entrypoint-initdb.d/2.sql"
+
+  eureka-server:
+    build:
+      context: ../../eureka-server
+      dockerfile: Dockerfile
+    networks:
+      my-network:
+        ipv4_address: 172.20.0.3
+    ports:
+      - "8761:8761"
+
+  api-gateway:
+    build:
+      context: ../../api-gateway
+      dockerfile: Dockerfile
+    networks:
+      my-network:
+        ipv4_address: 172.20.0.4
+    ports:
+      - "8765:8765"
+
+  cart-service:
+    build:
+      context: ../../cart-service
+      dockerfile: Dockerfile
+    networks:
+      my-network:
+        ipv4_address: 172.20.0.5
+    ports:
+      - "9000:9000"
+
+  product-service:
+    build:
+      context: ../../product-service
+      dockerfile: Dockerfile
+    networks:
+      my-network:
+        ipv4_address: 172.20.0.6
+    ports:
+      - "9001:9001"
+
+  review-service:
+    build:
+      context: ../../review-service
+      dockerfile: Dockerfile
+    networks:
+      my-network:
+        ipv4_address: 172.20.0.7
+    ports:
+      - "9002:9002"
+
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus-container
+    volumes:
+      - ./prometheus/:/etc/prometheus/
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      my-network:
+        ipv4_address: 172.20.0.8
+    ports:
+      - "9090:9090"
+
+
+  grafana:
+    image: grafana/grafana-enterprise
+    container_name: grafana
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-storage:/var/lib/grafana

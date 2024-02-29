@@ -1,0 +1,64 @@
+spring:
+  profiles:
+    active: dev
+  main:
+    banner-mode: off
+
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: cart
+          uri: lb://cart-service
+          predicates:
+            Path=/api/v1/carts/**
+
+        - id: product
+          uri: lb://product-service
+          predicates:
+            Path=/api/v1/products/**
+
+        - id: review
+          uri: lb://review-service
+          predicates:
+            Path=/api/v1/reviews/**
+
+
+
+# Actuator
+info:
+  app:
+    name: "This is API gateway service"
+    version: "1.0.0"
+    description: "This is API gateway service"
+
+
+management:
+  endpoint:
+    health:
+      group:
+        custom:
+          include: diskSpace,ping
+          show-components: always
+          show-details: always
+          status:
+            http-mapping:
+              up: 207
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  info:
+    env:
+      enabled: true
+  prometheus:
+    metrics:
+      export:
+        enabled: true

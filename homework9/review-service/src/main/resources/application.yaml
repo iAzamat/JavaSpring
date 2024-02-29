@@ -1,0 +1,39 @@
+spring:
+  profiles:
+    active: dev
+  main:
+    banner-mode: off
+
+
+# Actuator
+info:
+  app:
+    name: "This is review service"
+    version: "1.0.0"
+    description: "This is review service"
+
+
+management:
+  endpoint:
+    health:
+      group:
+        custom:
+          include: diskSpace,ping
+          show-components: always
+          show-details: always
+          status:
+            http-mapping:
+              up: 207
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  info:
+    env:
+      enabled: true
+  prometheus:
+    metrics:
+      export:
+        enabled: true
