@@ -14,14 +14,14 @@
 	в котором определите конфигурацию для сбора метрик из вашего микросервиса. 
 	Настройте интервал сбора и выберите метрики, которые вы хотите собирать.
 
-##### Prometheus
+#### Prometheus
 ![prom1](https://github.com/iAzamat/JavaSpring/blob/Homework11/homework9/img/prometheus_1.png)
 
 ![prom2](https://github.com/iAzamat/JavaSpring/blob/Homework11/homework9/img/prometheus_2.png)
 
-### Файл конфиг Prometheus [prometheus.yml](https://github.com/iAzamat/JavaSpring/blob/Homework11/homework9/Docker/prometheus/prometheus.yml)
+### Файл конфиг Prometheus [prometheus.yml](https://github.com/iAzamat/JavaSpring/blob/Homework11/homework9/Docker/microservice/prometheus/prometheus.yml)
 
-# Grafana
+#### Grafana
 ![graf1](https://github.com/iAzamat/JavaSpring/blob/Homework11/homework9/img/grafana_1.png)
 
 ![graf2](https://github.com/iAzamat/JavaSpring/blob/Homework11/homework9/img/grafana_2.png)
