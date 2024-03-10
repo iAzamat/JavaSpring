@@ -1,8 +1,7 @@
 package ru.gb.homework12.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import ru.gb.homework12.database.entity.RoutineTask;
 import ru.gb.homework12.database.entity.Task;
 import ru.gb.homework12.database.repository.TaskRepository;
 import ru.gb.homework12.model.TaskType;
@@ -12,24 +11,9 @@ import ru.gb.homework12.model.factory.UrgentTaskFactory;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class TaskServiceImpl implements TaskService {
-    @Autowired
-    private TaskRepository taskRepository;
-    private static volatile TaskServiceImpl instance;
-
-    public static TaskServiceImpl getInstance() {
-        TaskServiceImpl localInstance = instance;
-        if (localInstance == null) {
-            synchronized (TaskServiceImpl.class) {
-                localInstance = instance;
-                if (localInstance == null) {
-                    instance = localInstance = new TaskServiceImpl();
-                }
-            }
-        }
-
-        return localInstance;
-    }
+    private final TaskRepository taskRepository;
 
     @Override
     public List<Task> getAllTasks() {

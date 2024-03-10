@@ -12,7 +12,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 public class TaskControllerImpl implements ITaskController {
-    private final TaskService taskService = TaskServiceImpl.getInstance();
+    private final TaskService taskService;
 
     @GetMapping()
     public List<Task> getAllTasks() {
